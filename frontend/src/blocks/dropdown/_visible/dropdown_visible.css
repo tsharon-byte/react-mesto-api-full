@@ -1,0 +1,6 @@
+.dropdown_visible {
+    min-height: 140px;
+    opacity: 1;
+    padding: 40px 30px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,30 @@
+.snackbar {
+    width: 50%;
+    height: 75px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 4px;
+    padding-top: 15px;
+    background-color: goldenrod;
+    visibility: hidden;
+    position: fixed;
+    bottom: 30px;
+    left: 25%;
+    z-index: 20000;
+}
+
+.snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}

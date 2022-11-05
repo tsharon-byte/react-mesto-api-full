@@ -1,0 +1,22 @@
+.line_type_collapsed {
+    transition: all ease-in-out .5s;
+}
+
+.line_type_collapsed:first-child {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.line_type_collapsed:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+.line_type_collapsed:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+}

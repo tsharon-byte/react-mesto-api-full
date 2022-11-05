@@ -1,0 +1,10 @@
+.form__name {
+    margin-top: 48px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 425px) {
+    .form__name {
+        margin-top: 75px;
+    }
+}

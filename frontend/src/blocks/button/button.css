@@ -1,0 +1,28 @@
+.button {
+    background: #000000;
+    outline: none;
+    border-radius: 2px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: opacity .5s ease-in-out;
+    padding-top: 14px;
+    padding-bottom: 18px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+@media (max-width: 425px) {
+    .button {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

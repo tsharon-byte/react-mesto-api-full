@@ -1,0 +1,16 @@
+.form__title {
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 900;
+    color: #000;
+    box-sizing: border-box;
+}
+
+@media (max-width: 425px) {
+    .form__title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

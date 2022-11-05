@@ -1,0 +1,21 @@
+@media (min-width: 426px) {
+    .burger {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .burger {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        position: relative;
+    }
+
+    .burger:hover {
+        cursor: pointer;
+        opacity: .6;
+    }
+}

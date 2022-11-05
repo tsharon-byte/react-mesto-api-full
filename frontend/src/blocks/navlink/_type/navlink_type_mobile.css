@@ -1,0 +1,5 @@
+@media (min-width: 426px) {
+    .navlink_type_mobile {
+        display: none;
+    }
+}

@@ -1,0 +1,13 @@
+.tooltip {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 60px 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 425px) {
+    .tooltip {
+        padding: 50px 18px;
+    }
+}

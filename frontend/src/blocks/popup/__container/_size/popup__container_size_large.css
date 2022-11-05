@@ -1,0 +1,12 @@
+.popup__container_size_large {
+    width: 75vw;
+    height: 75vh;
+}
+
+@media (max-width: 468px) {
+    .popup__container_size_large {
+        margin-top: 136px;
+        width: calc(100% - 40px);
+        height: 299px;
+    }
+}

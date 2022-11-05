@@ -1,0 +1,8 @@
+.avatar__edit-button {
+    background-image: url("../../../images/avatar.svg");
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-color: transparent;
+}

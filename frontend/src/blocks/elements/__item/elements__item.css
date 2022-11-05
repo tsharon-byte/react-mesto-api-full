@@ -1,0 +1,15 @@
+.elements__item {
+    width: 282px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 360px;
+    overflow: hidden;
+    position: relative;
+}
+
+.elements__item:hover {
+    transform: scale(1.1);
+}

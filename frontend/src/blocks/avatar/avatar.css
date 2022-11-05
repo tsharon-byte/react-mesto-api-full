@@ -1,0 +1,25 @@
+.avatar {
+    width: 122px;
+    height: 122px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar:hover .avatar__button {
+    display: flex;
+}
+
+.avatar__button {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,9 @@
+.header__email {
+    font-weight: 500;
+}
+
+@media (max-width: 425px) {
+    .header__email {
+        display: none;
+    }
+}

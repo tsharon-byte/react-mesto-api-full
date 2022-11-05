@@ -1,0 +1,11 @@
+.profile__info-group {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .profile__info-group {
+        max-width: 100%;
+        flex-direction: column;
+    }
+}

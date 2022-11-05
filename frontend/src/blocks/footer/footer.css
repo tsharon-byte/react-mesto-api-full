@@ -1,0 +1,18 @@
+.footer {
+    margin-top: 67px;
+    box-sizing: border-box;
+    color: #545454;
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        padding: 0 27px;
+    }
+}
+
+@media (max-width: 425px) {
+    .footer {
+        margin-top: 48px;
+        padding-left: 19px;
+    }
+}

@@ -1,0 +1,7 @@
+.elements__image {
+    width: 100%;
+    background-size: cover;
+    height: 282px;
+    cursor: pointer;
+    object-fit: cover;
+}
