@@ -93,6 +93,8 @@ const login = (req, res, next) => {
       return res
         .cookie('jwt', token, {
           httpOnly: true,
+          sameSite: "none",
+          secure: true
         }).send({message: 'Успешный логин'});
     })
     .catch((err) => next(err));
