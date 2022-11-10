@@ -113,7 +113,7 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: "http://localhost:5000/",
+    baseUrl: "http://a.tsh.domainname.students.nomoredomains.icu/",
     headers: {
         Accept: "application/json",
         Origin: 'http://localhost:3000',
