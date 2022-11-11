@@ -113,10 +113,10 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: "http://a.tsh.domainname.students.nomoredomains.icu/",
+    baseUrl: "https://a.tsh.domainname.students.nomoredomains.icu/",
     headers: {
         Accept: "application/json",
-        Origin: 'http://tsh.domainname.students.nomoredomains.icu',
+        Origin: 'https://tsh.domainname.students.nomoredomains.icu',
         "Content-Type": "application/json",
     },
 });
