@@ -16,7 +16,7 @@ const Logout = ({
             })
             .finally(() => {
                 setLoggedIn(false);
-                history.push("/react-mesto-auth/sign-in");
+                history.push("/sign-in");
                 setNewCurrentUser({})
             })
         ;

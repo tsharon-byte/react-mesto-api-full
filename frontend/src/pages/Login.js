@@ -25,7 +25,7 @@ const Login = ({
       .then((data) => {
         setLoggedIn(true);
         setSuccess(true);
-        history.push("/react-mesto-auth/");
+        history.push("/");
       })
       .catch(() => {
         setLoggedIn(false);

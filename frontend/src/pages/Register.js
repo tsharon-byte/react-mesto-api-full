@@ -20,7 +20,7 @@ const Register = ({ setNotificationOpen, setSuccess, setMessage }) => {
       .then((data) => {
         setSuccess(true);
         setNotificationOpen(true);
-        history.push("/react-mesto-auth/sign-in");
+        history.push("/sign-in");
       })
       .catch((error) => {
         localStorage.clear();
@@ -73,7 +73,7 @@ const Register = ({ setNotificationOpen, setSuccess, setMessage }) => {
       </form>
       <div className="register__footer">
         Уже зарегистрированы?&nbsp;
-        <NavLink className="navlink" to={"/react-mesto-auth/sign-in"}>
+        <NavLink className="navlink" to={"/sign-in"}>
           Войти
         </NavLink>
       </div>

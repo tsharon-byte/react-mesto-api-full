@@ -27,14 +27,14 @@ const Header = ({ loggedIn, setLoggedIn }) => {
         <li onClick={handleExit}>
           <NavLink
             className="navlink header__link navlink_type_mobile"
-            to={"/react-mesto-auth/sign-out"}
+            to={"/sign-out"}
           >
             Выйти
           </NavLink>
         </li>
       </ul>
       <header className="header">
-        <NavLink to="/react-mesto-auth/" exact>
+        <NavLink to="/" exact>
           <img className="header__logo" src={Logo} alt="Логотип" />
         </NavLink>
         <div className="header__account">
@@ -43,16 +43,16 @@ const Header = ({ loggedIn, setLoggedIn }) => {
             {loggedIn ? (
               <NavLink
                 className="navlink navlink_type_desktop"
-                to="/react-mesto-auth/sign-out"
+                to="/sign-out"
               >
                 Выйти
               </NavLink>
             ) : isRegistration ? (
-              <NavLink className="navlink" to="/react-mesto-auth/sign-in">
+              <NavLink className="navlink" to="/sign-in">
                 Войти
               </NavLink>
             ) : (
-              <NavLink className="navlink" to="/react-mesto-auth/sign-up">
+              <NavLink className="navlink" to="/sign-up">
                 Регистрация
               </NavLink>
             )}

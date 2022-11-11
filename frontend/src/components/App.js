@@ -35,7 +35,7 @@ function App() {
     const handleNotificationPopupClosed = () => {
         setNotificationOpen(false);
         if (loggedIn) {
-            history.push("/react-mesto-auth/");
+            history.push("/");
         }
     };
 
@@ -44,7 +44,7 @@ function App() {
             <div className="page">
                 <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
                 <Switch>
-                    <Route path="/react-mesto-auth/sign-up">
+                    <Route path="/sign-up">
                         <Register
                             setSuccess={setSuccess}
                             setNotificationOpen={setNotificationOpen}
@@ -52,14 +52,14 @@ function App() {
                             setMessage={setMessage}
                         />
                     </Route>
-                    <Route path="/react-mesto-auth/sign-in">
+                    <Route path="/sign-in">
                         <Login
                             setSuccess={setSuccess}
                             setLoggedIn={setLoggedIn}
                             setNotificationOpen={setNotificationOpen}
                         />
                     </Route>
-                    <Route path="/react-mesto-auth/sign-out">
+                    <Route path="/sign-out">
                         <Logout
                             setLoggedIn={setLoggedIn}
                             setNewCurrentUser={setNewCurrentUser}
@@ -67,7 +67,7 @@ function App() {
                     </Route>
                     <ProtectedRoute
                         component={Home}
-                        path="/react-mesto-auth/"
+                        path="/"
                         loggedIn={loggedIn}
                     />
                 </Switch>
