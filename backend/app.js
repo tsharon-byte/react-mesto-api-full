@@ -40,10 +40,11 @@ server.use((req, res, next) => {
   return next();
 });
 
-server.get('/crash-test', () => {
+server.get('/crash-test', (req,res,next) => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
+  return next();
 });
 
 server.use('/', authRoute);
