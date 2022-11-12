@@ -39,6 +39,13 @@ server.use((req, res, next) => {
   }
   return next();
 });
+
+server.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 server.use('/', authRoute);
 server.use(auth);
 server.use('/users', usersRoute);
