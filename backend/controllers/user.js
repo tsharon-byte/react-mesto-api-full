@@ -18,7 +18,7 @@ const getUsers = (req, res, next) => {
     }).catch((err) => checkError(err, INCORRECT_DATA_ERROR, next));
 };
 const getUser = (req, res, next) => {
-  const {user} = req;
+  const { user } = req;
   User.findById(user._id)
     .select('_id name about avatar email')
     .then((doc) => {
@@ -26,9 +26,9 @@ const getUser = (req, res, next) => {
     }).catch((err) => checkError(err, INCORRECT_DATA_ERROR, next));
 };
 const updateUser = (req, res, next) => {
-  const {name, about} = req.body;
-  const {_id} = req.user;
-  User.findByIdAndUpdate(_id, {name, about}, {new: true, runValidators: true})
+  const { name, about } = req.body;
+  const { _id } = req.user;
+  User.findByIdAndUpdate(_id, { name, about }, { new: true, runValidators: true })
     .then((user) => {
       if (!user) {
         return next(new NotFoundError(USER_NOT_FOUND_ERROR));
@@ -40,15 +40,15 @@ const updateUser = (req, res, next) => {
     .catch((err) => checkError(err, USER_PATCH_INCORRECT_ERROR, next));
 };
 const updateUserAvatar = (req, res, next) => {
-  const {avatar} = req.body;
-  const {_id} = req.user;
-  User.findByIdAndUpdate(_id, {avatar}, {new: true, runValidators: true})
+  const { avatar } = req.body;
+  const { _id } = req.user;
+  User.findByIdAndUpdate(_id, { avatar }, { new: true, runValidators: true })
     .then((user) => {
       if (!user) {
         return next(new NotFoundError(USER_NOT_FOUND_ERROR));
       }
       return res.status(200).send({
-        _id: user._id, name: user.name, about: user.about, avatar: user.avatar, email: user.email
+        _id: user._id, name: user.name, about: user.about, avatar: user.avatar, email: user.email,
       });
     })
     .catch((err) => checkError(err, USER_PATCH_INCORRECT_AVATAR_ERROR, next));
@@ -81,21 +81,21 @@ const createUser = (req, res, next) => {
     .catch((err) => checkError(err, USER_CREATION_DATA_ERROR, next));
 };
 const login = (req, res, next) => {
-  const {email, password} = req.body;
-  const {JWT_KEY = 'sekreto'} = process.env;
+  const { email, password } = req.body;
+  const { JWT_KEY = 'sekreto' } = process.env;
   User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign(
-        {_id: user._id},
+        { _id: user._id },
         JWT_KEY,
-        {expiresIn: '7d'},
+        { expiresIn: '7d' },
       );
       return res
         .cookie('jwt', token, {
           httpOnly: true,
-          sameSite: "none",
-          secure: true
-        }).send({message: 'Успешный логин'});
+          sameSite: 'none',
+          secure: true,
+        }).send({ message: 'Успешный логин' });
     })
     .catch((err) => next(err));
 };

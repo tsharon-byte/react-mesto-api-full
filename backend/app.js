@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
@@ -13,22 +14,18 @@ const errorHandler = require('./middlewares/errorHandler');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-require('dotenv').config();
-
 const server = express();
 mongoose.connect('mongodb://localhost:27017/mestodb14');
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // за 15 минут
   max: 100, // можно совершить максимум 100 запросов с одного IP
 });
-
-// подключаем rate-limiter
-server.use(limiter);
 server.use(helmet());
 server.use(bodyParser.json());
 server.use(cookieParser());
 
 server.use(requestLogger);
+server.use(limiter);
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://tsh.domainname.students.nomoredomains.icu');
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -40,7 +37,7 @@ server.use((req, res, next) => {
   return next();
 });
 
-server.get('/crash-test', (req,res,next) => {
+server.get('/crash-test', (req, res, next) => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
